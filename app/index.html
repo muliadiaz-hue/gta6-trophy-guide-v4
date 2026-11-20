@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Platinum — GTA 6 Trophy Guide &amp; Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <div class="mark" aria-hidden="true">LP</div>
+    <div>
+      <h1>Leonida Platinum</h1>
+      <p class="tagline">GTA 6 Trophy Guide &amp; Tracker — all 55 trophies, roadmap, missables, cited guides. Works fully offline.</p>
+    </div>
+  </div>
+  <div class="totals" aria-label="Progress towards platinum">
+    <div class="big"><span id="earnedCount">0</span><span class="of"> / 55</span></div>
+    <div class="bar" role="progressbar" aria-label="Trophies earned"><div id="progressFill"></div></div>
+    <div class="sub"><span id="platinumPct">0% to platinum</span> · <span id="gradeLine"></span></div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Views">
+  <button type="button" data-view="checklist" class="active" aria-current="page">Checklist</button>
+  <button type="button" data-view="roadmap">Roadmap</button>
+  <button type="button" data-view="missables">Missables</button>
+  <button type="button" data-view="progress">Progress &amp; Save</button>
+</nav>
+
+<main>
+  <section id="view-checklist" class="view" aria-label="Trophy checklist">
+    <div class="filters">
+      <label class="search">Search
+        <input id="searchBox" type="search" placeholder="Search name or description…" autocomplete="off">
+      </label>
+      <label>Kind
+        <select id="kindFilter">
+          <option value="all">All kinds</option>
+          <option value="story">Story</option>
+          <option value="missable">Missable</option>
+          <option value="collectible">Collectibles</option>
+          <option value="activity">Activities</option>
+          <option value="robbery">Robbery</option>
+          <option value="side-story">Side stories</option>
+          <option value="misc">Misc</option>
+          <option value="online">Online</option>
+        </select>
+      </label>
+      <label>Grade
+        <select id="gradeFilter">
+          <option value="all">All grades</option>
+          <option value="platinum">Platinum</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="bronze">Bronze</option>
+        </select>
+      </label>
+      <label>Status
+        <select id="statusFilter">
+          <option value="all">All</option>
+          <option value="earned">Earned</option>
+          <option value="remaining">Remaining</option>
+        </select>
+      </label>
+      <label class="spoiler">
+        <input id="spoilerToggle" type="checkbox" checked>
+        Spoiler mode (hide story trophies until earned)
+      </label>
+    </div>
+    <p class="countline" id="countLine"></p>
+    <div class="layout">
+      <div class="list" id="trophyList" role="list"></div>
+      <aside class="guide" id="guidePane" aria-label="Trophy guide"></aside>
+    </div>
+  </section>
+
+  <section id="view-roadmap" class="view" hidden aria-label="Roadmap to platinum">
+    <div class="nextup" id="nextUp"></div>
+    <div class="stages" id="stageList"></div>
+  </section>
+
+  <section id="view-missables" class="view" hidden aria-label="Missable trophies">
+    <div class="missgrid" id="missGrid"></div>
+  </section>
+
+  <section id="view-progress" class="view" hidden aria-label="Progress and save">
+    <div class="proggrid">
+      <div class="card" id="gradeCard"></div>
+      <div class="card" id="kindCard"></div>
+      <div class="card" id="psnCard"></div>
+      <div class="card">
+        <h2>Your save</h2>
+        <p>Progress lives in this browser only (localStorage). Export a backup before clearing browser data.</p>
+        <div class="savebtns">
+          <button type="button" id="exportBtn">Export progress (.json)</button>
+          <label class="importlabel">Import progress
+            <input id="importFile" type="file" accept=".json,application/json">
+          </label>
+          <button type="button" id="resetBtn" class="danger">Reset progress</button>
+        </div>
+        <p class="importmsg" id="importMsg" role="status"></p>
+        <label class="spoiler">
+          <input id="spoilerToggle2" type="checkbox" checked>
+          Spoiler mode (hide story trophies until earned)
+        </label>
+      </div>
+      <div class="card">
+        <h2>About this guide</h2>
+        <p>Names, descriptions and grades are the official PlayStation 5 trophy list, frozen 2026-11-18 and verified against Exophase and PSNProfiles. PSN progress targets come from PSNProfiles. Guide text is written in our own words from the cited sources; where no unlock method was confirmed at launch, the guide says so plainly instead of inventing one.</p>
+        <p>Rockstar, Sony and Microsoft have published no separate official list page — the “official list” is the PS5 trophy list as mirrored by the sources below. No Rockstar logo or official artwork is used anywhere in this guide.</p>
+        <p class="sourcesline">Sources: <span id="aboutSources"></span></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Leonida Platinum — an unofficial fan-made tracker. Grand Theft Auto and GTA are trademarks of Rockstar Games; this guide is not affiliated with or endorsed by Rockstar Games or Sony Interactive Entertainment.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
